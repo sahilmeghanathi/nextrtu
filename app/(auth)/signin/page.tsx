@@ -1,7 +1,9 @@
 import SignInForm from "@/pages/auth/signInPage";
 
-export default function Home() {
+function SignInPage() {
   return (
     <SignInForm />
   );
 }
+
+export default SignInPage;
