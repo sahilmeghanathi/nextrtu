@@ -9,37 +9,27 @@ import { Button } from "@/components/ui/button";
 interface CustomButtonProps {
   loading?: boolean;
   loadingText?: string;
-
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
-
   fullWidth?: boolean;
-
   labelClassName?: string;
-
   children: React.ReactNode;
   className?: string;
   disabled?: boolean;
-
 }
 
 export function CustomButton({
   loading = false,
   loadingText,
-
   startIcon,
   endIcon,
-
   fullWidth = false,
-
   labelClassName,
-
   className,
   disabled,
   children,
-
   ...props
-}: CustomButtonProps) {
+}: Readonly<CustomButtonProps>) {
   return (
     <Button
       className={cn(fullWidth && "w-full", className)}

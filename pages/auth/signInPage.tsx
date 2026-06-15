@@ -45,7 +45,7 @@ export default function SignInForm() {
         />
 
         <CustomButton
-          className="w-full"
+          className="w-full bg-primary-foreground text-background h-12 rounded-full text-lg"
           loading={form.formState.isSubmitting}
           loadingText="Signing In..."
         >
@@ -54,4 +54,5 @@ export default function SignInForm() {
       </form>
     </Form>
   );
+  
 }

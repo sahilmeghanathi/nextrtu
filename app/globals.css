@@ -217,8 +217,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  --color-primary: var(--primary);
-  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary-hover);
+  --color-primary-foreground: var(--primary-active);
 
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);

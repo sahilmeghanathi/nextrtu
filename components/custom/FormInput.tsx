@@ -18,15 +18,12 @@ import {
 interface CustomInputProps<T extends FieldValues> {
   control: Control<T>;
   name: FieldPath<T>;
-
   label?: string;
   placeholder?: string;
   description?: string;
-
   type?: React.HTMLInputTypeAttribute;
   disabled?: boolean;
   required?: boolean;
-
   containerClassName?: string;
   labelClassName?: string;
   inputClassName?: string;
@@ -35,19 +32,16 @@ interface CustomInputProps<T extends FieldValues> {
 export function CustomInput<T extends FieldValues>({
   control,
   name,
-
   label,
   placeholder,
   description,
-
   type = "text",
   disabled,
   required,
-
   containerClassName,
   labelClassName,
-  inputClassName,
-}: CustomInputProps<T>) {
+  inputClassName = "bg-background h-12" ,
+}: Readonly<CustomInputProps<T>>) {
   return (
     <FormField
       control={control}
@@ -57,7 +51,7 @@ export function CustomInput<T extends FieldValues>({
           {label && (
             <FormLabel className={cn(labelClassName)}>
               {label}
-              {required && <span className="text-destructive ml-1">*</span>}
+              {required && <span className="text-destructive">*</span>}
             </FormLabel>
           )}
 
