@@ -1,9 +1,5 @@
-import SignInForm from "@/pages/auth/signInPage";
+import SignInPage from "@/app-pages/SignIn";
 
-function SignInPage() {
-  return (
-    <SignInForm />
-  );
+export default function Home() {
+  return <SignInPage />;
 }
-
-export default SignInPage;

@@ -25,7 +25,7 @@ export function CustomButton({
   endIcon,
   fullWidth = false,
   labelClassName,
-  className,
+  className = "cursor-pointer",
   disabled,
   children,
   ...props
