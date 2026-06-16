@@ -16,6 +16,7 @@ interface CustomButtonProps {
   children: React.ReactNode;
   className?: string;
   disabled?: boolean;
+  type?: "button" | "submit" | "reset";
 }
 
 export function CustomButton({
@@ -28,10 +29,12 @@ export function CustomButton({
   className = "cursor-pointer",
   disabled,
   children,
+  type = "button",
   ...props
 }: Readonly<CustomButtonProps>) {
   return (
     <Button
+    type={type}
       className={cn(fullWidth && "w-full", className)}
       disabled={disabled || loading}
       {...props}

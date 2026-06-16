@@ -4,39 +4,28 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Form } from "@/components/ui/form";
+import { SignInFormValues, signInSchema } from "@/src/validations/signin.schema";
 import { CustomInput } from "@/components/custom/FormInput";
 import { CustomButton } from "@/components/custom/CustomButton";
-import { SignUpFormValues, signUpSchema } from "@/src/validations/signup.schema";
 
+export default function SignInForm() {
 
-
-export default function SignUpForm() {
-  const form = useForm<SignUpFormValues>({
-    resolver: zodResolver(signUpSchema),
+  const form = useForm<SignInFormValues>({
+    resolver: zodResolver(signInSchema),
     mode: "onBlur",
     defaultValues: {
-      fullName: "",
       email: "",
       password: "",
-      confirmPassword: "",
     },
   });
 
-  const onSubmit = async (data: SignUpFormValues) => {
+  const onSubmit = async (data: SignInFormValues) => {
     console.log(data);
   };
 
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
-        <CustomInput
-          control={form.control}
-          name="fullName"
-          label="Full Name"
-          placeholder="Enter your full name"
-          required
-        />
-
         <CustomInput
           control={form.control}
           name="email"
@@ -51,27 +40,20 @@ export default function SignUpForm() {
           name="password"
           label="Password"
           type="password"
-          placeholder="Create a password"
-          required
-        />
-
-        <CustomInput
-          control={form.control}
-          name="confirmPassword"
-          label="Confirm Password"
-          type="password"
-          placeholder="Confirm your password"
+          placeholder="Enter your password"
           required
         />
 
         <CustomButton
+        type="submit"
           className="w-full bg-primary-foreground text-background h-12 rounded-full text-lg"
           loading={form.formState.isSubmitting}
-          loadingText="Creating Account..."
+          loadingText="Signing In..."
         >
-          Create Account
+          Sign In
         </CustomButton>
       </form>
     </Form>
   );
+  
 }

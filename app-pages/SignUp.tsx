@@ -1,6 +1,6 @@
 import BackgroundOverlay from "@/components/wrapper/Background";
 import Image from "next/image";
-import SignUpForm from "@/components/auth/signUpPage";
+import SignUpForm from "@/components/auth/signUpForm";
 
 function SignUpPage() {
   return (

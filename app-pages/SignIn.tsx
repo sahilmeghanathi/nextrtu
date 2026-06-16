@@ -1,5 +1,5 @@
 import BackgroundOverlay from "@/components/wrapper/Background";
-import SignInForm from "@/components/auth/signInPage";
+import SignInForm from "@/components/auth/signInForm";
 import Image from "next/image";
 
 function SignInPage() {
